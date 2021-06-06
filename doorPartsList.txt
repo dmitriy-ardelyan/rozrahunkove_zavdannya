@@ -1,0 +1,6 @@
+DoorMainPart,Aluminium,200,300,JustDoIt,true,Dotted,Black,true,false
+DoorMainPart,RenewedAluminium,200,300,JustDoIt,true,Dotted,Black,true,false
+WoodenInstallationDoorPart,Wooden,200,300,NewDeliMegaDoors,12,25.22,Black,true,false
+WoodenInstallationDoorPart,IvoryWood,200,300,NewDeliMegaDoors,12,500.22,Black,true,false
+AluminiumInstallationDoorPart,Aluminium,200,300,Bangladesh Door Factory,true,Dotted,12,123.22
+AluminiumInstallationDoorPart,DarkAluminium,200,300,Bangladesh Door Factory,true,Dotted,12,47.22
