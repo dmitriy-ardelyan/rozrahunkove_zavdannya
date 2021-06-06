@@ -28,6 +28,7 @@ public class DoorMainPart extends DoorPart {
         this.colour = doorPartParameters.get(7);
         this.isVarnished = Boolean.parseBoolean(doorPartParameters.get(8));
         this.isPainted = Boolean.parseBoolean(doorPartParameters.get(9));
+        this.price = Double.parseDouble(doorPartParameters.get(10));
     }
 
     @Override
@@ -42,7 +43,8 @@ public class DoorMainPart extends DoorPart {
                 + surfaceType + ","
                 + colour + ","
                 + isVarnished + ","
-                + isPainted;
+                + isPainted + ","
+                + price;
     }
 
     public void setDefaultValues() {

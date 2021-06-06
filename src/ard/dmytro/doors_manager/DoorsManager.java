@@ -154,15 +154,49 @@ public class DoorsManager {
         return availableDoorParts
                 .stream()
                 .filter(doorPart -> doorPart instanceof InstallationDoorPart)
-                .filter(doorPart -> doorPart.getMaterial().equals("Aluminium"))
+                .filter(doorPart -> doorPart.getMaterial().contains("Aluminium"))
                 .max(new Comparator<DoorPart>() {
                     @Override
                     public int compare(DoorPart o1, DoorPart o2) {
-                        double result = ((InstallationDoorPart) o1).getPrice() - ((InstallationDoorPart) o2).getPrice();
+                        double result = o1.getPrice() - o2.getPrice();
                         if (result == 0) return 0;
                         return (result > 0) ? 1 : -1;
                     }
                 })
                 .get();
     }
+
+    public DoorPart bubbleSortOutMostExpensivePart() {
+        DoorPart[] doorPartsArray = new DoorPart[availableDoorParts.size()];
+        availableDoorParts.toArray(doorPartsArray);
+        boolean isSorted = false;
+
+        while (!isSorted) {
+            for (int i = 0; i < doorPartsArray.length; i++) {
+                doorPartsArray[i].print();
+            }
+            isSorted = true;
+            for (int i = 0; i < doorPartsArray.length - 1; i++) {
+
+                boolean isPriceSwitchRestrictedBecauseOfMaterial = doorPartsArray[i].getMaterial().contains("Aluminium") &&
+                        doorPartsArray[i + 1].getMaterial().contains("Wood");
+                if (doorPartsArray[i].getMaterial().contains("Wood") &&
+                        doorPartsArray[i + 1].getMaterial().contains("Aluminium")) {
+                    DoorPart temp = doorPartsArray[i];
+                    doorPartsArray[i] = doorPartsArray[i + 1];
+                    doorPartsArray[i + 1] = temp;
+                    isSorted = false;
+                } else if (doorPartsArray[i].getPrice() < doorPartsArray[i + 1].getPrice() &&
+                        !isPriceSwitchRestrictedBecauseOfMaterial) {
+                    DoorPart temp = doorPartsArray[i];
+                    doorPartsArray[i] = doorPartsArray[i + 1];
+                    doorPartsArray[i + 1] = temp;
+                    isSorted = false;
+                }
+            }
+            System.out.println("--------------------");
+        }
+        return doorPartsArray[0];
+    }
+
 }

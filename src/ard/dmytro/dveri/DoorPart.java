@@ -7,8 +7,17 @@ public class DoorPart implements Comparable{
     protected int width;
     protected int height;
     protected String manufacturer;
+    protected double price;
 
     public DoorPart() {
+    }
+
+    public double getPrice() {
+        return price;
+    }
+
+    public void setPrice(double price) {
+        this.price = price;
     }
 
     public String getMaterial() {

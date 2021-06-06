@@ -6,7 +6,6 @@ import java.util.Objects;
 
 public class InstallationDoorPart extends DoorPart {
     protected int warrantyMonth;
-    protected double price;
 
     public InstallationDoorPart() {
     }
@@ -17,14 +16,6 @@ public class InstallationDoorPart extends DoorPart {
 
     public void setWarrantyMonth(int warrantyMonth) {
         this.warrantyMonth = warrantyMonth;
-    }
-
-    public double getPrice() {
-        return price;
-    }
-
-    public void setPrice(double price) {
-        this.price = price;
     }
 
     @Override

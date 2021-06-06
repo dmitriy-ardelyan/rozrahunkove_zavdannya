@@ -29,7 +29,15 @@ public class DoorsInformationSystem {
                 break;
                 case "f":
                 case "F": {
+                    System.out.println("Output using stream API");
                     doorsManager.getMostExpensiveAluminiumInstallationPart().print();
+                    System.out.println("Output using bubbles method");
+                    doorsManager.bubbleSortOutMostExpensivePart().print();
+                }
+                break;
+                case "w":
+                case "W": {
+                    doorsManager.writeDoorPartsDataToFile();
                 }
                 break;
                 case "s":
@@ -65,6 +73,7 @@ public class DoorsInformationSystem {
         System.out.println("Exit system - X");
         System.out.println("Sort entries - S");
         System.out.println("Find most expensive aluminium door installation part - F");
+        System.out.println("Write into file - W");
         System.out.println("-------------------------------------");
     }
 }
